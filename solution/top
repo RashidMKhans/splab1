@@ -6,4 +6,4 @@
 
 # here comes your solution
 # e.g.
-cut -d' ' -f1 $2 | head -$1 | cat -n
+cat log.txt | grep "18/Oct/2006" | cut -d '"' -f4 | grep -v '-' | sort | uniq -c | sort -n -r | head -10 | awk '{printf("%s - %d - %d%s\n", $2, $1, $1 / 28 * 100, "%" )}' > shell.sh
